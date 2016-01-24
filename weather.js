@@ -1,13 +1,16 @@
 // Dollar sign is just another way of saying jQuery function
 $(function() {
   var handleWeatherResponse = function(data) {
+    weather = data;
     console.log(data);
 
     // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
+var markup = "the dewpoint for today is " +
+      $('.weather-report').html(object.weather);
+// typeof jQuery1113024792795721441507_1453669009070 === 'function' && jQuery1113024792795721441507_1453669009070
 
-    var markup = "The weather report... " + "will be here when I finish my homework, homie.";
-
+    // $('.weather-report').html(data.daily);
 
     // End of your code
 
