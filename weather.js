@@ -1,20 +1,27 @@
 // Dollar sign is just another way of saying jQuery function
+// function prepareEventHandlers(){
+
 $(function() {
   var handleWeatherResponse = function(data) {
-    weather = data;
+
     console.log(data);
 
-    // Put your code here to change the "markup" variable.
-    // Don't change any other code in this file. You will be sad.
-var markup = "the dewpoint for today is " +
-      $('.weather-report').html(object.weather);
-// typeof jQuery1113024792795721441507_1453669009070 === 'function' && jQuery1113024792795721441507_1453669009070
+var markup = "The weather in Chicago is: " +
+      data.currently.summary //+ ". The weather tomorrow is: " + " " +
+        // data.daily.summary + " The weather tomorrow is: " + " " +
+        // data.hourly.summary + " " +
+        // data.daily.data[0].dewPoint
+      +
+        // Three day forcast below this line
+        "Tomorrow will be: " + data.daily.data[0].summary + " " +
+        "The following day will be: " + data.daily.data[1].summary + " " +
+        " The following day will be: " + data.daily.data[2].summary + " " +
+        " The following day will be: " + data.daily.data[3].summary + " "
+      +
+      data.daily.data[5].time  
 
-    // $('.weather-report').html(data.daily);
-
-    // End of your code
-
-    $('.weather-report').html(markup);
+    // $('.weather-report').html(threeday);
+      $('.weather-report').html(markup);
   }
   $('a.get-the-weather').on('click', function(event) {
     event.preventDefault();
@@ -27,3 +34,8 @@ var markup = "the dewpoint for today is " +
     });
   });
 });
+// }
+// window.onload = function() {
+//   prepareEventHandlers();
+//
+// }
