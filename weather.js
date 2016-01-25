@@ -13,12 +13,12 @@ var markup = "The weather in Chicago is: " +
         // data.daily.data[0].dewPoint
       +
         // Three day forcast below this line
-        "Tomorrow will be: " + data.daily.data[0].summary + " " +
+        ". Weather tomorrow will be: " + data.daily.data[0].summary + " " +
         "The following day will be: " + data.daily.data[1].summary + " " +
         " The following day will be: " + data.daily.data[2].summary + " " +
         " The following day will be: " + data.daily.data[3].summary + " "
-      +
-      data.daily.data[5].time  
+
+      // data.daily.data[5].time
 
     // $('.weather-report').html(threeday);
       $('.weather-report').html(markup);
