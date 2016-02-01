@@ -6,23 +6,19 @@ $(function() {
 
     console.log(data);
 
-var markup = "The weather in Chicago is: " +
-      data.currently.summary //+ ". The weather tomorrow is: " + " " +
-        // data.daily.summary + " The weather tomorrow is: " + " " +
-        // data.hourly.summary + " " +
-        // data.daily.data[0].dewPoint
+var markup = "The weather in Chicago is: " + data.currently.summary
       +
-        // Three day forcast below this line
-        ". The weather tomorrow will be: " + data.daily.data[0].summary + " " +
-        "The following day will be: " + data.daily.data[1].summary + " " +
-        " The day after will be: " + data.daily.data[2].summary + " " +
-        " The fourth day will be: " + data.daily.data[3].summary + " "
+            " while the current temperature is " + data.currently.apparentTemperature + ". " + "Tomorrow is a low of " + data.daily.data[0].apparentTemperatureMin + " and a high of " + data.daily.data[0].apparentTemperatureMax + " and " +data.daily.data[0].summary
+            + " The following day is a low of " + data.daily.data[1].apparentTemperatureMin + " and a high of " + data.daily.data[1].apparentTemperatureMax + " and " + data.daily.data[1].summary + " The day after is a low of "
+            + data.daily.data[2].apparentTemperatureMin + " and a high of " + data.daily.data[2].apparentTemperatureMax + " and " + data.daily.data[2].summary
+            + " The fourth day will be a low of " + data.daily.data[3].apparentTemperatureMin + " and a high of " + data.daily.data[3].apparentTemperatureMax + " and " + data.daily.data[3].summary
 
       // data.daily.data[5].time
 
     // $('.weather-report').html(threeday);
       $('.weather-report').html(markup);
   }
+  // markup.style.fontWeight = "Bold";
   $('a.get-the-weather').on('click', function(event) {
     event.preventDefault();
     $.ajax({
