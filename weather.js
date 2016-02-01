@@ -6,16 +6,13 @@ $(function() {
 
     console.log(data);
 
-var markup = "The weather in Chicago is: " + data.currently.summary
-      +
-            " while the current temperature is " + data.currently.apparentTemperature + ". " + "Tomorrow is a low of " + data.daily.data[0].apparentTemperatureMin + " and a high of " + data.daily.data[0].apparentTemperatureMax + " and " +data.daily.data[0].summary
-            + " The following day is a low of " + data.daily.data[1].apparentTemperatureMin + " and a high of " + data.daily.data[1].apparentTemperatureMax + " and " + data.daily.data[1].summary + " The day after is a low of "
-            + data.daily.data[2].apparentTemperatureMin + " and a high of " + data.daily.data[2].apparentTemperatureMax + " and " + data.daily.data[2].summary
-            + " The fourth day will be a low of " + data.daily.data[3].apparentTemperatureMin + " and a high of " + data.daily.data[3].apparentTemperatureMax + " and " + data.daily.data[3].summary
+var markup = "<H3>The weather in Chicago is: </H3>" + data.currently.summary +
+            " while the current temperature is " + data.currently.apparentTemperature + ". " +
+            "<H3>Tomorrow </H3>" + "will be a low of " + data.daily.data[0].apparentTemperatureMin + " and a high of " + data.daily.data[0].apparentTemperatureMax + " and " +data.daily.data[0].summary
+            + "<h3> The following day </h3>" + "will be a low of "+ data.daily.data[1].apparentTemperatureMin + " and a high of " + data.daily.data[1].apparentTemperatureMax + " and " + data.daily.data[1].summary +
+            "<h3> The day after </h3>" + "will be a low of " + data.daily.data[2].apparentTemperatureMin + " and a high of " + data.daily.data[2].apparentTemperatureMax + " and " + data.daily.data[2].summary
+            + "<h3> The fourth day </h3>" + "will be a low of " + data.daily.data[3].apparentTemperatureMin + " and a high of " + data.daily.data[3].apparentTemperatureMax + " and " + data.daily.data[3].summary
 
-      // data.daily.data[5].time
-
-    // $('.weather-report').html(threeday);
       $('.weather-report').html(markup);
   }
   // markup.style.fontWeight = "Bold";
